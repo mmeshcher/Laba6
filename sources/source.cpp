@@ -48,7 +48,7 @@ void init_logs() {
 void logs() {
 	srand(*(new int));
 	static const string ideal("0000");
-	for (char r : {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'}) {
+	while (true) {
 		string s = to_string(rand());
 		string crypted = picosha2::hash256_hex_string(s);
 		if (crypted.substr(crypted.size() - ideal.size()) != ideal)
